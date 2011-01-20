@@ -6,7 +6,7 @@ import xml.dom.minidom as dom
 def printPathState(stateid, statedata):
     state = '''
         '%s' : {
-            svg: R.path("%s").attr("id", "%s"),
+            svg: R.path("%s").attr("id", "%s").attr(attr),
             name: "",
             desc: ""
         },'''
@@ -27,6 +27,12 @@ if __name__ == "__main__":
     svg = dom.parse(svgfile);
     
     begin = '''
+    var attr = {
+        fill: "#333",
+        stroke: "#666",
+        "stroke-width": 1,
+        "stroke-linejoin": "round"
+    }
     var us = {
     '''
 
